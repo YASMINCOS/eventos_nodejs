@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "titulo": "Tech Conference DF",
+        "descricao": "Uma conferência de tecnologia com diversos palestrantes renomados.",
+        "programacao": [
+            {
+                "horario": "09:00",
+                "atividade": "Abertura"
+            },
+            {
+                "horario": "10:00",
+                "atividade": "Palestra: Inovações em IA"
+            },
+            {
+                "horario": "14:00",
+                "atividade": "Workshop: Desenvolvimento de Apps"
+            }
+        ],
+        "data": "2024-09-15",
+        "local": "Centro de Convenções Ulysses Guimarães",
+        "estado": "DF"
+    },
+    {
+        "id": 2,
+        "titulo": "Feira de Startups DF",
+        "descricao": "Uma feira para startups apresentarem suas ideias e se conectarem com investidores.",
+        "programacao": [
+            {
+                "horario": "10:00",
+                "atividade": "Abertura"
+            },
+            {
+                "horario": "11:00",
+                "atividade": "Painel: Financiamento para Startups"
+            },
+            {
+                "horario": "13:00",
+                "atividade": "Networking"
+            }
+        ],
+        "data": "2024-10-20",
+        "local": "Parque da Cidade Sarah Kubitschek",
+        "estado": "DF"
+    },
+    {
+        "id": 3,
+        "titulo": "Hackathon DF",
+        "descricao": "Um hackathon de 48 horas para desenvolvimento de soluções inovadoras.",
+        "programacao": [
+            {
+                "horario": "08:00",
+                "atividade": "Início"
+            },
+            {
+                "horario": "12:00",
+                "atividade": "Almoço"
+            },
+            {
+                "horario": "20:00",
+                "atividade": "Apresentação dos projetos"
+            }
+        ],
+        "data": "2024-11-05",
+        "local": "Universidade de Brasília",
+        "estado": "DF"
+    }
+]
