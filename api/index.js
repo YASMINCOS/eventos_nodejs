@@ -4,12 +4,12 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 
 // Middleware
 app.use(bodyParser.json());
 
-const eventosFilePath = path.join(__dirname, 'eventos.json');
+const eventosFilePath = path.resolve(__dirname, '..', 'eventos.json');
 
 // Função para ler os eventos do arquivo JSON
 const getEventos = () => {
@@ -21,6 +21,11 @@ const getEventos = () => {
 const saveEventos = (eventos) => {
     fs.writeFileSync(eventosFilePath, JSON.stringify(eventos, null, 2), 'utf8');
 };
+
+// Rota de boas-vindas
+app.get('/', (req, res) => {
+    res.send('Bem-vindo à API de Eventos!');
+});
 
 // Obter todos os eventos
 app.get('/api/eventos', (req, res) => {
