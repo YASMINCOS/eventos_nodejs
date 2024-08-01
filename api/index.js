@@ -4,12 +4,12 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
 
-const eventosFilePath = path.join(__dirname, 'src', 'eventos', 'eventos.json');
+const eventosFilePath = path.join(__dirname, 'eventos.json');
 
 // Função para ler os eventos do arquivo JSON
 const getEventos = () => {
@@ -23,13 +23,13 @@ const saveEventos = (eventos) => {
 };
 
 // Obter todos os eventos
-app.get('/eventos', (req, res) => {
+app.get('/api/eventos', (req, res) => {
     const eventos = getEventos();
     res.status(200).send(eventos);
 });
 
 // Obter um evento por ID
-app.get('/eventos/:id', (req, res) => {
+app.get('/api/eventos/:id', (req, res) => {
     const eventos = getEventos();
     const evento = eventos.find(e => e.id === parseInt(req.params.id));
     if (!evento) {
@@ -39,7 +39,7 @@ app.get('/eventos/:id', (req, res) => {
 });
 
 // Criar um novo evento
-app.post('/eventos', (req, res) => {
+app.post('/api/eventos', (req, res) => {
     const eventos = getEventos();
     const novoEvento = {
         id: eventos.length + 1,
@@ -51,7 +51,7 @@ app.post('/eventos', (req, res) => {
 });
 
 // Atualizar um evento por ID
-app.patch('/eventos/:id', (req, res) => {
+app.patch('/api/eventos/:id', (req, res) => {
     const eventos = getEventos();
     const eventoIndex = eventos.findIndex(e => e.id === parseInt(req.params.id));
     if (eventoIndex === -1) {
@@ -63,7 +63,7 @@ app.patch('/eventos/:id', (req, res) => {
 });
 
 // Deletar um evento por ID
-app.delete('/eventos/:id', (req, res) => {
+app.delete('/api/eventos/:id', (req, res) => {
     const eventos = getEventos();
     const eventoIndex = eventos.findIndex(e => e.id === parseInt(req.params.id));
     if (eventoIndex === -1) {
